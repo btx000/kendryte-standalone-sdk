@@ -496,7 +496,7 @@ void i2s_play(i2s_device_number_t device_num, dmac_channel_number_t channel_num,
         {
             trans_buf = buf + frame_cnt * frame * (bits_per_sample / 8) * track_num;
             i2s_parse_voice(device_num, buff[flag], trans_buf, frame_remain, bits_per_sample, track_num, &send_len);
-            i2s_send_data_dma(device_num, trans_buf, send_len, channel_num);
+            i2s_send_data_dma(device_num, buff[flag], send_len, channel_num);
         }
         free(buff[0]);
     }
